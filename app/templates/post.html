@@ -1,0 +1,29 @@
+
+{% extends "base.html" %}
+{% block head %}
+{{super()}}
+<meta name="description" content={{post.title}}>
+<meta name="keywords" content="教程">
+<meta name="author" content="北方素素">
+{% endblock head %}
+
+
+{%block content%}
+
+{{super()}}
+
+
+<div class="container">
+  
+  <div class="my-3 p-3 bg-white rounded box-shadow">
+    <h4 class="border-bottom border-gray pb-2 mb-3">{{post.title}}</h4>
+    {{ post.body }}
+    
+  </div>
+ 
+  
+</div>
+{%endblock content%}
+{%block scripts%}
+
+{%endblock scripts%}

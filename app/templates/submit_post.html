@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{%block content%}
+
+{{form.csrf_token}}
+
+<div class="container">
+  <input name="title">
+  
+  <!--
+    <p>
+      <span class="badge badge-primary">标签1</span>
+      <span class="badge badge-info">标签2</span>
+    </p>
+  -->
+  <input name="content" class="summernote">
+
+</div>
+<button id="sss" value="点我">dianwo</button>
+
+
+
+</div>
+
+{%endblock content%}

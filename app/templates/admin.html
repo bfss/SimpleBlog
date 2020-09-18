@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{%block content%}
+{{super()}}
+
+
+<div class="container">
+
+    <div class="my-3 p-3 bg-white rounded box-shadow">
+        <h4 class="border-bottom border-gray pb-2 mb-0">博客管理</h4>
+
+        <div class="list-group">
+            {% for post in posts %}
+            <a href="{{ url_for('main.get_post', id=post.id) }}" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">{{post.title}}</h5>
+                    <small>{{post.timestamp}}</small>
+                </div>
+                <p class="mb-1"></p>
+                <small></small>
+
+
+            </a>
+            <a href="{{url_for('admin.delete_post', id=post.id)}}">删除</a>
+            {% endfor %}
+
+
+
+        </div>
+
+    </div>
+
+</div>
+{%endblock content%}

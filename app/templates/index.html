@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{%block content%}
+{{super()}}
+<div class="jumbotron text-center">
+  <h1>北方素素的个人博客</h1>
+  <p>哈哈哈哈哈~</p>
+</div>
+
+<div class="container">
+  
+  <div class="my-3 p-3 bg-white rounded box-shadow">
+    <h4 class="border-bottom border-gray pb-2 mb-0">最新博客</h4>
+    
+    <div class="list-group">
+        {% for post in posts %}
+        <a href="{{ url_for('main.get_post', id=post.id) }}" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">{{post.title}}</h5>
+              <small>{{post.timestamp}}</small>
+            </div>
+            <p class="mb-1"></p>
+            <small></small>
+          </a>
+        {% endfor %}
+      
+      
+      
+    </div>
+    
+  </div>
+  
+</div>
+{%endblock content%}
